@@ -2,7 +2,8 @@ from flask import Flask, render_template, request,abort
 from funciones import LeerLibreria
 import os
 
-libreria = LeerLibreria()
+fichero = "MSX.json"
+libreria = LeerLibreria(fichero)
 
 app = Flask(__name__)	
 
