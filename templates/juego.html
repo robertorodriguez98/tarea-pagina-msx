@@ -1,0 +1,11 @@
+{% extends "base.html" %} 
+{% block titulo %}{{juego.get("nombre")}}{% endblock %}
+{% block titulo2 %}{{juego.get("nombre")}}{% endblock %}
+{% block titulo3 %}{{juego.get("nombre")}}{% endblock %}
+{% block contenido %}
+<div class="posts">
+    <p>
+        {{juego.get("nombre")}}
+    </p>
+</div>
+{% endblock %}

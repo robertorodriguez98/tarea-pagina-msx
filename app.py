@@ -22,9 +22,15 @@ def listajuegos():
         nombre = str(juego.get("nombre"))
         if nombre.startswith(str(juegobusc)):
             dict={"nombre":juego.get("nombre"),"desarrollador":juego.get("desarrollador"),"id":juego.get("id")}
-            nuevalibreria.append(dict)
-            
+            nuevalibreria.append(dict)            
     return render_template("listajuegos.html", libreria=nuevalibreria,juegobusc=juegobusc)
+
+@app.route('/juego/<id>')
+def juego(id):
+    for juego in libreria:
+        if juego.get("id") == int(id):
+            return render_template("juego.html",juego=juego)
+    abort(404)
 
 @app.route('/libro/<isbn>')
 def libro_dinamico(isbn):
