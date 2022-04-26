@@ -1,0 +1,28 @@
+{% extends "base.html" %} 
+{% block titulo %}Lista de juegos{% endblock %}
+{% block titulo2 %}Lista de juegos{% endblock %}
+{% block titulo3 %}Lista de juegos{% endblock %}
+{% block contenido %}
+<div class="posts">
+    <p>
+        <table>
+            <thead>
+                <tr>
+                    <th>Nombre</th>
+                    <th>Desarrollador</th>
+                    <th>Detalles</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for juego in libreria: -%}
+                    <tr>
+                        <td>{{juego.get("nombre")}}</td>
+                        <td>{{juego.get("desarrollador")}}</td>
+                        <td><a href="juego/{{juego.get("id")}}">Detalles</a></td>
+                    </tr>
+                {% endfor -%}
+            </tbody>
+        </table>
+    </p>
+</div>
+{% endblock %}

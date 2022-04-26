@@ -1,7 +1,7 @@
 import json
-def LeerLibreria(fichero):
+def LeerLibreria():
     try:
-        f=open(fichero)
+        f=open("MSX.json")
         datos = json.load(f)
         f.close
         return datos
