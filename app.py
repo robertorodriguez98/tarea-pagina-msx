@@ -32,21 +32,6 @@ def juego(id):
             return render_template("juego.html",juego=juego)
     abort(404)
 
-@app.route('/libro/<isbn>')
-def libro_dinamico(isbn):
-    for libro in libreria:
-        if libro.get("isbn") == isbn:
-            publicado = libro.get("status")
-            nombre = libro.get("title")
-            imagen = libro.get("thumbnailUrl")
-            paginas = libro.get("pageCount")
-            autores = libro.get("authors")
-            descripcion = libro.get("shortDescription")
-            categorias = libro.get("categories")
-            return render_template("libro.html",nombre=nombre,imagen=imagen,paginas=paginas,autores=autores,descripcion=descripcion,categorias=categorias,publicado=publicado,isbn=isbn)
-    return abort(404)
-
-
 #app.run("0.0.0.0",5000,debug=True)
 port=os.environ["PORT"]
 app.run("0.0.0.0",int(port),debug=True)
