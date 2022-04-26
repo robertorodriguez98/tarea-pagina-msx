@@ -5,7 +5,15 @@
 {% block contenido %}
 <div class="posts">
     <p>
-        {{juego.get("nombre")}}
+        <h1>{{juego.get("nombre")}}</h1>
+        <ul>
+            <li>Sistema: {{juego.get("sistema")}}</li>
+            <li>Distribuidor: {{juego.get("distribuidor")}}</li>
+            <li>Desarrollador: {{juego.get("desarrollador")}}</li>
+            <li>Categoría: {{juego.get("categoria")}}</li>
+            <li>Año: {{juego.get("año")}}</li>
+        </ul>
     </p>
+    <a href="/juegos">Volver a Juegos</a>
 </div>
 {% endblock %}
