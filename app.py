@@ -14,7 +14,7 @@ def inicio():
 def juegos():
     return render_template("juegos.html")
 
-@app.route('/listajuegos',methods=["POST"])
+@app.route('/juegos',methods=["POST"])
 def listajuegos():
     nuevalibreria = []
     juegobusc=request.form['juego']
