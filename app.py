@@ -47,6 +47,6 @@ def libro_dinamico(isbn):
     return abort(404)
 
 
-app.run("0.0.0.0",5000,debug=True)
-#port=os.environ["PORT"]
-#app.run("0.0.0.0",int(port),debug=True)
+#app.run("0.0.0.0",5000,debug=True)
+port=os.environ["PORT"]
+app.run("0.0.0.0",int(port),debug=True)
