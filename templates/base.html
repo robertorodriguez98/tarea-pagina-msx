@@ -8,7 +8,7 @@ Licence URI: https://www.os-templates.com/template-terms
 -->
 <html>
 <head>
-<title>{% block title %}{% endblock %}</title>
+<title>{% block titulo %}{% endblock %}</title>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 <link href="../static/css/layout.css" rel="stylesheet" type="text/css" media="all">
@@ -18,7 +18,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <!-- ################################################################################################ -->
 <!-- ################################################################################################ -->
 <!-- Top Background Image Wrapper -->
-<div class="bgded overlay" style="background-image:url('../static/img/demo/backgrounds/01.png');"> 
+<div class="bgded overlay" style="background-image:url('../static/img/cabecera2.png');"> 
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
   <!-- ################################################################################################ -->
@@ -27,7 +27,7 @@ Licence URI: https://www.os-templates.com/template-terms
     <header id="header" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <div id="logo" class="fl_left">
-        <h1><a href="../index.html">{% block title2 %}{% endblock %}</a></h1>
+        <h1><a href="../index.html">{% block titulo2 %}{% endblock %}</a></h1>
       </div>
       
       <!-- ################################################################################################ -->
@@ -40,8 +40,8 @@ Licence URI: https://www.os-templates.com/template-terms
     <div id="breadcrumb" class="hoc clear"> 
       <!-- ################################################################################################ -->
       <ul>
-        <li><a href="#">Inicio</a></li>
-        <li><a href="#">{% block title3 %}{% endblock %}</a></li>
+        <li><a href="/">Inicio</a></li>
+        <li>{% block titulo3 %}{% endblock %}</li>
       </ul>
       <!-- ################################################################################################ -->
     </div>
@@ -55,7 +55,7 @@ Licence URI: https://www.os-templates.com/template-terms
 <div class="wrapper row3">
   <main class="hoc container clear"> 
     <!-- main body -->
-    {% block content %}{% endblock %}
+    {% block contenido %}{% endblock %}
     <!-- / main body -->
     <div class="clear"></div>
   </main>
