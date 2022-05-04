@@ -12,18 +12,27 @@ def inicio():
 
 @app.route('/juegos')
 def juegos():
-    return render_template("juegos.html")
+    listaCat = []
+    for juego in libreria:
+        if juego.get("categoria") not in listaCat:
+            listaCat.append(juego.get("categoria"))
+    return render_template("juegos.html", listaCat = listaCat)
 
 @app.route('/juegos',methods=["POST"])
 def listajuegos():
     nuevalibreria = []
     juegobusc=request.form['juego']
+    catbusc=request.form['categoria']
     for juego in libreria:
         nombre = str(juego.get("nombre"))
-        if nombre.startswith(str(juegobusc)):
+        if nombre.startswith(str(juegobusc)) and juego.get("categoria") == catbusc:
             dict={"nombre":juego.get("nombre"),"desarrollador":juego.get("desarrollador"),"id":juego.get("id")}
-            nuevalibreria.append(dict)            
-    return render_template("listajuegos.html", libreria=nuevalibreria,juegobusc=juegobusc)
+            nuevalibreria.append(dict) 
+    listaCat = []
+    for juego in libreria:
+        if juego.get("categoria") not in listaCat:
+            listaCat.append(juego.get("categoria"))           
+    return render_template("listajuegos.html", libreria=nuevalibreria,juegobusc=juegobusc,listaCat=listaCat)
 
 @app.route('/juego/<id>')
 def juego(id):

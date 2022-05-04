@@ -7,7 +7,12 @@
     <p>
         <form method="post" action="/juegos">
             <label> Introduzca un juego a buscar: </label>
-            <input type="text" name="juego" value={{juegobusc}} size=50/>
+            <input type="text" name="juego" value="{{juegobusc}}" size=50/>
+            <select name="categoria">
+                {% for cat in listaCat: -%}
+                <option value="{{cat}}">{{cat}}</option>
+                {% endfor -%}
+            </select>
             <input type="submit" value="enviar"/> 
         </form>
         <table>
