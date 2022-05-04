@@ -32,7 +32,7 @@ def listajuegos():
     for juego in libreria:
         if juego.get("categoria") not in listaCat:
             listaCat.append(juego.get("categoria"))           
-    return render_template("listajuegos.html", libreria=nuevalibreria,juegobusc=juegobusc,listaCat=listaCat)
+    return render_template("listajuegos.html", libreria=nuevalibreria,juegobusc=juegobusc,listaCat=listaCat,catbusc=catbusc)
 
 @app.route('/juego/<id>')
 def juego(id):

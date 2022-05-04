@@ -10,7 +10,11 @@
             <input type="text" name="juego" value="{{juegobusc}}" size=50/>
             <select name="categoria">
                 {% for cat in listaCat: -%}
+                {% if cat == catbusc -%}
+                <option value="{{cat}}" selected>{{cat}}</option>
+                {% else -%}
                 <option value="{{cat}}">{{cat}}</option>
+                {% endif -%}
                 {% endfor -%}
             </select>
             <input type="submit" value="enviar"/> 
